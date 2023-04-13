@@ -2,7 +2,7 @@ import os
 import subprocess
 import PyPDF2
 
-def ppttopdf():
+def ppttopdf(input_path):
     def powerpoint_to_pdf(input_file_path, output_file_path):
         subprocess.run(['soffice', '--headless', '--convert-to', 'pdf', input_file_path])
         os.rename(f'{os.path.splitext(input_file_path)[0]}.pdf', output_file_path)
@@ -16,7 +16,7 @@ def ppttopdf():
             pdf_merger.write(f)
 
     # Specify input and output file paths
-    input_file_path = 'tt.ppt'
+    input_file_path = input_path
     output_file_path = 'tt.pdf'
 
     # Convert PowerPoint file to PDF
