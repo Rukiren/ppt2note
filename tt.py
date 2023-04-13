@@ -2,7 +2,7 @@ import os
 import comtypes.client
 import PyPDF2
 
-def ppttopdf():
+def ppttopdf(input_path):
     def powerpoint_to_pdf(input_file_path, output_file_path):
         powerpoint = comtypes.client.CreateObject("Powerpoint.Application")
         powerpoint.Visible = 1
@@ -20,8 +20,8 @@ def ppttopdf():
             pdf_merger.write(f)
 
     # Specify input and output file paths
-    input_file_path = r'C:\Users\user\Desktop\python\tt.ppt'
-    output_file_path = r'C:\Users\user\Desktop\python\tt.pdf'
+    input_file_path = input_path
+    output_file_path = r'tt.pdf'
 
     # Convert PowerPoint file to PDF
     powerpoint_to_pdf(input_file_path, output_file_path)
